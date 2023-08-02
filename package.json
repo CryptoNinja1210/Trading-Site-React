@@ -9,7 +9,7 @@
     "client": "npm start --prefix client",
     "client-install": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "npminstall": "concurrently \"npm install\" \"npm run client-install\"",
+    "package-install": "concurrently \"npm install\" \"npm run client-install\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Brad Traversy",
