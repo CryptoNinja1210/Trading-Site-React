@@ -1,0 +1,748 @@
+function Authenticate()
+{
+	writeToScreen("Authenticate");
+  var message = 
+  {
+		MessageType: "Authenticate",
+		Password: accessKey
+	};
+  doSend(message);
+}
+
+{"Complete":true,"Message":"Welcome!","MessageType":"AuthenticateResult"}"
+
+
+
+
+{
+	MessageType: "SubscribeRealtime",
+	Exchange: "NFO",
+	InstrumentIdentifier: "FUTIDX_BANKNIFTY_24NOV2016_XX_0"
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+
+// Example of returned data in JSON format. This data is returned every second
+{
+	"Exchange":"NFO",
+	"InstrumentIdentifier":"NIFTY-I",
+	"LastTradeTime":1593422508,
+	"ServerTime":1593422508,
+	"AverageTradedPrice":10208.98,
+	"BuyPrice":10213.6,
+	"BuyQty":75,
+	"Close":10318.0,
+	"High":10265.35,
+	"Low":10156.3,
+	"LastTradePrice":10214.5,
+	"LastTradeQty":300,
+	"Open":10241.9,
+	"OpenInterest":12995025,
+	"QuotationLot":0.0,
+	"SellPrice":10214.65,
+	"SellQty":75,
+	"TotalQtyTraded":13710675,
+	"Value":139972006861.5,
+	"PreOpen":false,
+	"PriceChange":-103.5,
+	"PriceChangePercentage":-1.0,
+	"OpenInterestChange":1360200,
+	"MessageType":"RealtimeResult"
+}
+
+
+
+// Sample request(JavaScript)
+{
+	MessageType: "SubscribeSnapshot",
+	Exchange: "NFO",
+	InstrumentIdentifier: "FUTIDX_BANKNIFTY_24NOV2016_XX_0",
+	Periodicity: "MINUTE",
+	Period: 1
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format. This data returned as per Periodicity & Period values
+{
+"Exchange":"NFO",
+"InstrumentIdentifier":"FUTIDX_BANKNIFTY_24NOV2016_XX_0",
+"Periodicity":"MINUTE",
+"LastTradeTime":1508835184,
+"TradedQty":0,
+"OpenInterest":0,
+"Open":20162.0,
+"High":20162.0,
+"Low":20162.0,
+"Close":20162.0,
+"MessageType":"RealtimeSnapshotResult"
+}
+
+
+
+// Sample request(JavaScript)
+{
+	MessageType: "GetLastQuote",
+	Exchange: "MCX",
+	InstrumentIdentifier: "CRUDEOIL-I",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+	"AverageTradedPrice": 3029.07,
+	"BuyPrice": 3060,
+	"ButQty": 5,
+	"Close": 3043,
+	"Exchange": "MCX",
+	"High": 3073,
+	"InstrumentIdentifier": "CRUDEOIL-I",
+	"LastTradePrice": 3064,
+	"LastTradeQty": 0,
+	"LastTradeTime": 1594144795000,
+	"Low": 2994,
+	"Open": 3022,
+	"OpenInterest": 1845,
+	"PreOpen": false,
+	"QuotationLot": 1,
+	"SellPrice": 3064,
+	"SellQty": 7,
+	"ServerTime": 1594144800000,
+	"TotalQtyTraded": 100608,
+	"Value": 30474863700,
+	"PriceChange": 1,
+	"PriceChangePercentage": 0.03,
+	"OpenInterestChange": 0,
+	"MessageType":"LastQuoteResult"
+}
+
+
+
+// Sample request(JavaScript)
+	{
+		MessageType: "GetLastQuoteShort",
+		Exchange: "NFO",
+		InstrumentIdentifier: "NIFTY-I",
+	};
+	doSend(request);
+// Example of returned data in JSON format
+{
+"Exchange":"NFO",
+"InstrumentIdentifier":"NIFTY-I",
+"LastTradeTime":1594116000,
+"BuyPrice":10752.1,
+"LastTradePrice":10755.95,
+"SellPrice":10755.95,
+"MessageType":"LastQuoteShortResult"
+}
+
+
+
+// Sample request(JavaScript)
+            {
+                MessageType: "GetLastQuoteShortWithClose",
+                Exchange: "NFO",
+                InstrumentIdentifier: "NIFTY25MAR21FUT",
+		isShortIdentifier: "true"
+            };
+     doSend(request);
+// Example of returned data in JSON format
+{
+"Exchange":"NFO",
+"InstrumentIdentifier":"NIFTY25MAR21FUT",
+"LastTradeTime":1592992800,
+"BuyPrice":10296.05,
+"Close":10467.7,
+"LastTradePrice":10298.9,
+"SellPrice":10297.25,
+"MessageType":"LastQuoteShortWithCloseResult"
+}
+
+
+
+// Sample request(JavaScript)
+            {
+                MessageType: "GetLastQuoteArray",
+                Exchange: "NFO",
+				isShortIdentifiers: "false",
+                InstrumentIdentifiers: [{Value:"NIFTY-I"}, {Value:"BANKNIFTY-I"}, {Value:"RELIANCE-I"}]
+            };
+     doSend(request);
+// Example of returned data in JSON format
+{"Result":[{
+"Exchange":"NFO",
+"InstrumentIdentifier":"NIFTY-I",
+"LastTradeTime":1592992800,
+"ServerTime":1592992800,
+"AverageTradedPrice":10431.5,
+"BuyPrice":10296.05,
+"BuyQty":75,
+"Close":10467.7,
+"High":10536.1,
+"Low":10274.25,
+"LastTradePrice":10298.9,
+"LastTradeQty":225,
+"Open":10499.3,
+"OpenInterest":8179950,
+"QuotationLot":75.0,
+"SellPrice":10297.25,
+"SellQty":75,
+"TotalQtyTraded":19117200,
+"Value":199421071800.0,
+"PreOpen":false,
+"PriceChange":-168.8,
+"PriceChangePercentage":-1.61,
+"OpenInterestChange":781125,
+"MessageType":"LastQuoteResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"BANKNIFTY-I",
+"LastTradeTime":1592992800,
+"ServerTime":1592992800,
+"AverageTradedPrice":21969.7,
+"BuyPrice":21385.05,
+"BuyQty":80,
+"Close":22291.75,
+"High":22494.85,
+"Low":21300.3,
+"LastTradePrice":21385.05,
+"LastTradeQty":0,
+"Open":22494.85,
+"OpenInterest":977780,
+"QuotationLot":20.0,
+"SellPrice":21389.3,
+"SellQty":60,
+"TotalQtyTraded":8661240,
+"Value":190284844428.0,
+"PreOpen":false,
+"PriceChange":-906.7,
+"PriceChangePercentage":-4.07,
+"OpenInterestChange":-308640,
+"MessageType":"LastQuoteResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"RELIANCE-I",
+"LastTradeTime":1592992799,
+"ServerTime":1592992799,
+"AverageTradedPrice":1741.37,
+"BuyPrice":1734.0,
+"BuyQty":505,
+"Close":1726.4,
+"High":1773.75,
+"Low":1714.35,
+"LastTradePrice":1734.9,
+"LastTradeQty":0,
+"Open":1737.0,
+"OpenInterest":16243325,
+"QuotationLot":505.0,
+"SellPrice":1735.0,
+"SellQty":5555,
+"TotalQtyTraded":27920440,
+"Value":48619816602.8,
+"PreOpen":false,
+"PriceChange":8.5,
+"PriceChangePercentage":0.49,
+"OpenInterestChange":1815980,
+"MessageType":"LastQuoteResult"}],
+"MessageType":"LastQuoteArrayResult"}
+
+
+
+// Sample request(JavaScript)
+            {
+                MessageType: "GetLastQuoteArrayShort",
+                Exchange: "NFO",
+				isShortIdentifiers: "true",
+                InstrumentIdentifiers: [{Value:"NIFTY25MAR21FUT"}, {Value:"BANKNIFTY25MAR21FUT"}, {Value:"RELIANCE25MAR21FUT"}]
+            };
+     doSend(request);
+// Example of returned data in JSON format
+{"Result":[{
+"Exchange":"NFO",
+"InstrumentIdentifier":"NIFTY25MAR21FUT",
+"LastTradeTime":1592992800,
+"BuyPrice":10296.05,
+"LastTradePrice":10298.9,
+"SellPrice":10297.25,
+"MessageType":"LastQuoteShortResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"BANKNIFTY25MAR21FUT",
+"LastTradeTime":1592992800,
+"BuyPrice":21385.05,
+"LastTradePrice":21385.05,
+"SellPrice":21389.3,
+"MessageType":"LastQuoteShortResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"RELIANCE25MAR21FUT",
+"LastTradeTime":1592992799,
+"BuyPrice":1734.0,
+"LastTradePrice":1734.9,
+"SellPrice":1735.0,
+"MessageType":"LastQuoteShortResult"}],
+"MessageType":"LastQuoteArrayShortResult"}
+
+
+
+// Sample request(JavaScript)
+            {
+                MessageType: "GetLastQuoteArrayShortWithClose",
+                Exchange: "NFO",
+				isShortIdentifiers: "True",
+                InstrumentIdentifiers: [{Value:"NIFTY25MAR21FUT"}, {Value:"BANKNIFTY25MAR21FUT"}, {Value:"RELIANCE25MAR21FUT"}]
+            };
+     doSend(request);
+// Example of returned data in JSON format
+{"Result":[{
+"Exchange":"NFO",
+"InstrumentIdentifier":"NIFTY25MAR21FUT",
+"LastTradeTime":1592992800,
+"BuyPrice":10296.05,
+"Close":0.0,
+"LastTradePrice":10298.9,
+"SellPrice":10297.25,
+"MessageType":"LastQuoteShortWithCloseResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"BANKNIFTY25MAR21FUT",
+"LastTradeTime":1592992800,
+"BuyPrice":21385.05,
+"Close":0.0,
+"LastTradePrice":21385.05,
+"SellPrice":21389.3,
+"MessageType":"LastQuoteShortWithCloseResult"},
+{"Exchange":"NFO",
+"InstrumentIdentifier":"RELIANCE25MAR21FUT",
+"LastTradeTime":1592992799,
+"BuyPrice":1734.0,
+"Close":0.0,
+"LastTradePrice":1734.9,
+"SellPrice":1735.0,
+"MessageType":"LastQuoteShortWithCloseResult"}],
+"MessageType":"LastQuoteArrayShortWithCloseResult"}
+
+
+
+// Sample request(JavaScript)
+            {
+                MessageType: "GetSnapshot",
+                Exchange: "MCX",
+                Periodicity: "MINUTE",
+                Period: 1,
+				isShortIdentifiers: "true",
+                InstrumentIdentifiers: [{Value:"CRUDEOIL19MAR21FUT"}, {Value:"NATURALGAS26MAR21FUT"}]
+            };
+     doSend(request);
+// Example of returned data in JSON format
+{"Result":[
+{"InstrumentIdentifier":"CRUDEOIL19MAR21FUT",
+"Exchange":"MCX",
+"LastTradeTime":1593008580,
+"TradedQty":167,
+"OpenInterest":3760,
+"Open":3001.0,
+"High":3003.0,
+"Low":2998.0,
+"Close":3000.0},
+{"InstrumentIdentifier":"NATURALGAS26MAR21FUT",
+"Exchange":"MCX",
+"LastTradeTime":1593008580,
+"TradedQty":57,
+"OpenInterest":10824,
+"Open":129.8,
+"High":129.9,
+"Low":129.7,
+"Close":129.8}],
+"MessageType":"SnapshotResult"}
+
+
+
+// Sample request(JavaScript)
+{
+                MessageType: "GetHistory",
+                Exchange: "NFO",
+                InstrumentIdentifier: "NIFTY-I",
+		//isShortIdentifier: "TRUE",
+                Periodicity: "MINUTE",
+                Max: 5
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data (OHLC) in JSON format
+{"Request":{"Exchange":"NFO","InstrumentIdentifier":"NIFTY-I","IsShortIdentifier":false,"From":0,"To":0,"Max":5,"Periodicity":"MINUTE","Period":0,"MessageType":"GetHistory"},
+"Result":[{"LastTradeTime":1594186020,"QuotationLot":75,"TradedQty":44175,"OpenInterest":12130575,"Open":10772.85,"High":10779.95,"Low":10771.55,"Close":10779.2},
+{"LastTradeTime":1594185960,"QuotationLot":75,"TradedQty":48000,"OpenInterest":12130575,"Open":10770.05,"High":10774.75,"Low":10769.35,"Close":10772.8},
+{"LastTradeTime":1594185900,"QuotationLot":75,"TradedQty":54150,"OpenInterest":12055275,"Open":10773.45,"High":10774.0,"Low":10769.9,"Close":10771.65},
+{"LastTradeTime":1594185840,"QuotationLot":75,"TradedQty":71325,"OpenInterest":12055275,"Open":10774.4,"High":10776.0,"Low":10771.65,"Close":10773.4},
+{"LastTradeTime":1594185780,"QuotationLot":75,"TradedQty":38925,"OpenInterest":12055275,"Open":10780.0,"High":10780.3,"Low":10774.55,"Close":10775.1}],
+"MessageType":"HistoryOHLCResult"}
+// Example of returned data (Tick) in JSON format
+{"Request":{"Exchange":"NFO","InstrumentIdentifier":"NIFTY-I","IsShortIdentifier":false,"From":0,"To":0,"Max":5,"Periodicity":"TICK","Period":0,"MessageType":"GetHistory"},"Result":
+[{"LastTradeTime":1594186301,"LastTradePrice":10775.0,"QuotationLot":75,"TradedQty":225,"OpenInterest":12176625,"BuyPrice":10774.3,"BuyQty":75,"SellPrice":10775.0,"SellQty":3150},
+{"LastTradeTime":1594186300,"LastTradePrice":10774.0,"QuotationLot":75,"TradedQty":0,"OpenInterest":12176625,"BuyPrice":10774.3,"BuyQty":75,"SellPrice":10775.0,"SellQty":3375},
+{"LastTradeTime":1594186299,"LastTradePrice":10774.0,"QuotationLot":75,"TradedQty":0,"OpenInterest":12176625,"BuyPrice":10774.1,"BuyQty":75,"SellPrice":10775.0,"SellQty":3375},
+{"LastTradeTime":1594186298,"LastTradePrice":10774.0,"QuotationLot":75,"TradedQty":75,"OpenInterest":12176625,"BuyPrice":10773.9,"BuyQty":75,"SellPrice":10775.0,"SellQty":3375},
+{"LastTradeTime":1594186297,"LastTradePrice":10773.8,"QuotationLot":75,"TradedQty":0,"OpenInterest":12176625,"BuyPrice":10774.0,"BuyQty":75,"SellPrice":10775.0,"SellQty":3300}],
+"MessageType":"HistoryTickResult"}
+
+
+
+// What is returned ?
+// Exchange
+ 
+
+// Sample request(JavaScript)
+{
+MessageType: "GetExchanges",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Result":[
+{"Value":"MCX"},
+{"Value":"NFO"},
+{"Value":"NSE"},
+],
+"MessageType":"ExchangesResult"
+}
+
+
+
+// Sample request(JavaScript)
+{
+                MessageType: "GetInstrumentsOnSearch",
+                Exchange: "NFO",
+		InstrumentType:"FUTIDX",
+		Search:"NIFTY",
+		//Product:"NIFTY",
+		//OptionType:"PE",
+		//Expiry:"30jul2020",
+		detailedInfo: "true"		
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{"Request":{"Exchange":"NFO","Search":"NIFTY","InstrumentType":"FUTIDX","OnlyActive":true,"MessageType":"GetInstrumentsOnSearch"},
+"Result":[
+{"Identifier":"FUTIDX_NIFTY_29JUL2021_XX_0","Name":"FUTIDX","Expiry":"29Jul2021","StrikePrice":0.0,"Product":"NIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"29Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"NIFTY29JUL21FUT","QuotationLot":50.0,"Description":"","TokenNumber":"53181","LowPriceRange":14250.45,"HighPriceRange":17417.2},
+{"Identifier":"FUTIDX_NIFTY_26AUG2021_XX_0","Name":"FUTIDX","Expiry":"26Aug2021","StrikePrice":0.0,"Product":"NIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"26Aug2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"NIFTY26AUG21FUT","QuotationLot":50.0,"Description":"","TokenNumber":"49939","LowPriceRange":14282.8,"HighPriceRange":17456.75},
+{"Identifier":"FUTIDX_NIFTY_30SEP2021_XX_0","Name":"FUTIDX","Expiry":"30Sep2021","StrikePrice":0.0,"Product":"NIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"30Sep2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"NIFTY30SEP21FUT","QuotationLot":50.0,"Description":"","TokenNumber":"48740","LowPriceRange":14330.45,"HighPriceRange":17515.0}],
+"MessageType":"InstrumentsOnSearchResult"}
+
+
+
+// Sample request(JavaScript)
+var request =
+{
+                MessageType: "GetInstruments",
+                Exchange: "NFO",
+		InstrumentType:"FUTIDX",
+		//Product:"NIFTY",
+		//OptionType:"PE",
+		//Expiry:"30jul2020"	
+		//detailedInfo: "true"	
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{"Request":{"Exchange":"NFO","InstrumentType":"FUTIDX","OnlyActive":true,"MessageType":"GetInstruments"},
+"Result":[
+{"Identifier":"FUTIDX_FINNIFTY_15JUL2021_XX_0","Name":"FUTIDX","Expiry":"15Jul2021","StrikePrice":0.0,"Product":"FINNIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"15Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"FINNIFTY15JUL21FUT","QuotationLot":40.0,"Description":"","TokenNumber":"43055","LowPriceRange":15163.75,"HighPriceRange":18533.5},
+{"Identifier":"FUTIDX_FINNIFTY_22JUL2021_XX_0","Name":"FUTIDX","Expiry":"22Jul2021","StrikePrice":0.0,"Product":"FINNIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"22Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"FINNIFTY22JUL21FUT","QuotationLot":40.0,"Description":"","TokenNumber":"46491","LowPriceRange":15180.65,"HighPriceRange":18554.1},
+{"Identifier":"FUTIDX_BANKNIFTY_29JUL2021_XX_0","Name":"FUTIDX","Expiry":"29Jul2021","StrikePrice":0.0,"Product":"BANKNIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"29Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"BANKNIFTY29JUL21FUT","QuotationLot":25.0,"Description":"","TokenNumber":"53179","LowPriceRange":32185.5,"HighPriceRange":39337.85},
+{"Identifier":"FUTIDX_FINNIFTY_29JUL2021_XX_0","Name":"FUTIDX","Expiry":"29Jul2021","StrikePrice":0.0,"Product":"FINNIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"29Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"FINNIFTY29JUL21FUT","QuotationLot":40.0,"Description":"","TokenNumber":"53180","LowPriceRange":15187.65,"HighPriceRange":18562.7},
+{"Identifier":"FUTIDX_NIFTY_29JUL2021_XX_0","Name":"FUTIDX","Expiry":"29Jul2021","StrikePrice":0.0,"Product":"NIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"29Jul2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"NIFTY29JUL21FUT","QuotationLot":50.0,"Description":"","TokenNumber":"53181","LowPriceRange":14250.45,"HighPriceRange":17417.2},
+{"Identifier":"FUTIDX_FINNIFTY_05AUG2021_XX_0","Name":"FUTIDX","Expiry":"05Aug2021","StrikePrice":0.0,"Product":"FINNIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"05Aug2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"FINNIFTY05AUG21FUT","QuotationLot":40.0,"Description":"","TokenNumber":"38408","LowPriceRange":15201.9,"HighPriceRange":18580.05},
+{"Identifier":"FUTIDX_NIFTY_26AUG2021_XX_0","Name":"FUTIDX","Expiry":"26Aug2021","StrikePrice":0.0,"Product":"NIFTY","PriceQuotationUnit":"","OptionType":"XX","ProductMonth":"26Aug2021","UnderlyingAsset":"","UnderlyingAssetExpiry":"","IndexName":"","TradeSymbol":"NIFTY26AUG21FUT","QuotationLot":50.0,"Description":"","TokenNumber":"49939","LowPriceRange":14282.8,"HighPriceRange":17456.75}
+],"MessageType":"InstrumentsResult"}
+
+
+
+// What is returned ?
+// InstrumentTypes
+ 
+
+// Sample request(JavaScript)
+{
+MessageType: "GetInstrumentTypes",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetInstrumentTypes"
+},
+"Result":[
+{"Value":"OPTIDX"},
+{"Value":"OPTSTK"}
+],
+"MessageType":"InstrumentTypesResult"
+}
+
+
+
+
+// What is returned ?
+// Products
+ 
+
+// Sample request(JavaScript)
+{
+MessageType: "GetProducts",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetProducts"
+},
+"Result":[
+{"Value":"NIFTY"},
+{"Value":"GAIL"}
+],
+"MessageType":"ProductsResult"
+}
+
+
+
+
+// What is returned ?
+// ExpiryDates
+ 
+
+// Example send request(JavaScript)
+{
+MessageType: "GetExpiryDates",
+Exchange: "NFO"
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetExpiryDates"
+},
+"Result":[
+{"Value":"25JUN2020"},
+{"Value":"28DEC2017"},
+{"Value":"31DEC2020"}
+],
+"MessageType":"ExpiryDatesResult"
+}
+
+
+
+// What is returned ?
+// OptionTypes
+ 
+
+// Sample request(JavaScript)
+{
+MessageType: "GetOptionTypes",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetOptionTypes"
+},
+"Result":[
+{"Value":"PE"},
+{"Value":"CE"}
+],
+"MessageType":"OptionTypesResult"
+}
+
+
+
+
+// What is returned ?
+// StrikePrices
+ 
+
+// Sample request(JavaScript)
+ 
+
+{
+MessageType: "GetStrikePrices",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+ 
+
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetStrikePrices"
+},
+"Result":[
+{"Value":"11000"},
+{"Value":"10000"},
+{"Value":"8500"},
+{"Value":"8600"}
+],
+"MessageType":"StrikePricesResult"
+}
+
+
+
+// What is returned ?
+// // Server EndPoint where enduser is connected (useful while debugging issues)
+ 
+
+// Sample request(JavaScript)
+{
+MessageType: "GetServerInfo",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"ServerID":"2152-24",
+"MessageType":"ServerInfoResult"
+}
+
+
+
+// What is returned ?
+// Returns details about user account (what is allowed / disallowed)
+ 
+
+// Example send request(JavaScript)
+var request =
+{
+MessageType: "GetLimitation"
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data
+{
+"GeneralParams":{
+"AllowedBandwidthPerHour":-1.0,
+"AllowedCallsPerHour":-1,
+"AllowedCallsPerMonth":-1,
+"AllowedBandwidthPerMonth":-1.0,
+"ExpirationDate":1485468000,
+"Enabled":true
+},
+"AllowedExchanges":[
+{"AllowedInstruments":-1,"DataDelay":0,"ExchangeName":"CDS"},
+{"AllowedInstruments":-1,"DataDelay":0,"ExchangeName":"MCX"},
+{"AllowedInstruments":-1,"DataDelay":0,"ExchangeName":"NFO"},
+{"AllowedInstruments":-1,"DataDelay":0,"ExchangeName":"NSE"},
+{"AllowedInstruments":-1,"DataDelay":0,"ExchangeName":"NSE_IDX"}
+],
+"AllowedFunctions":[
+{"FunctionName":"GetExchangeMessages","IsEnabled":false},
+{"FunctionName":"GetHistory","IsEnabled":true},
+{"FunctionName":"GetLastQuote","IsEnabled":false},
+{"FunctionName":"GetLastQuoteArray","IsEnabled":false},
+{"FunctionName":"GetLastQuoteArrayShort","IsEnabled":false},
+{"FunctionName":"GetLastQuoteShort","IsEnabled":false},
+{"FunctionName":"GetMarketMessages","IsEnabled":false},
+{"FunctionName":"GetSnapshot","IsEnabled":true},
+{"FunctionName":"SubscribeRealtime","IsEnabled":false}
+],
+"HistoryLimitation":{
+"TickEnabled":true,
+"DayEnabled":true,
+"WeekEnabled":false,
+"MonthEnabled":false,
+"MaxEOD":100000,
+"MaxIntraday":44,
+"Hour_1Enabled":false,
+"Hour_2Enabled":false,
+"Hour_3Enabled":false,
+"Hour_4Enabled":false,
+"Hour_6Enabled":false,
+"Hour_8Enabled":false,
+"Hour_12Enabled":false,
+"Minute_1Enabled":true,
+"Minute_2Enabled":false,
+"Minute_3Enabled":false,
+"Minute_4Enabled":false,
+"Minute_5Enabled":false,
+"Minute_6Enabled":false,
+"Minute_10Enabled":false,
+"Minute_12Enabled":false,
+"Minute_15Enabled":false,
+"Minute_20Enabled":false,
+"Minute_30Enabled":false,
+"MaxTicks":5
+},
+"MessageType":"LimitationResult",
+}
+
+
+
+
+
+// What is returned ?
+// Market Messages as received from the Exchange
+// Supported parameters
+// Exchange	String value like MCX	Name of supported exchange. How to get list of supported exchanges you can find here
+// Sample request(JavaScript)
+{
+MessageType: "GetMarketMessages",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetMarketMessages"
+},
+"Result":[
+{"ServerTime":1391822398,"SessionID":2,"MarketType":"Normal Market Close","MessageType":"MarketMessagesItemResult"},
+{“ServerTime”:1391822399,”SessionID”:1,”MarketType”:”Special Session Open”,”MessageType”:”MarketMessagesItemResult”} ], “MessageType”:”MarketMessagesResult” }
+
+
+
+
+// What is returned ?
+// Exchange Messages as received from the Exchange
+// Sample request(JavaScript)
+var request =
+{
+MessageType: "GetExchangeMessages",
+Exchange: "NFO",
+};
+var message = JSON.stringify(request);
+websocket.send(message);
+// Example of returned data in JSON format
+{
+"Request":{
+"Exchange":"NFO",
+"MessageType":"GetExchangeMessages"
+},
+"Result":[
+{"ServerTime":1391822398,"Identifier":"Market","Message":"Members are requested to note that ...","MessageType":"ExchangeMessagesItemResult"},
+{"ServerTime":1391822399,"Identifier":"Market","Message":"2013 shall be levied subsequently.","MessageType":"ExchangeMessagesItemResult"}
+],
+"MessageType":"ExchangeMessagesResult"
+}
+
+
+
+
+// What is returned ?
+// InstrumentIdentifier (Symbol), Exchange, LastTradeTime, TradedQty, OpenInterest, Open, High, Low, Close
+// Sample request(JavaScript)
+{
+MessageType: "GetExchangeSnapshot",
+Exchange: "NFO",
+Periodicity: "Minute",
+Period: 1
+};
+var message = JSON.stringify(request);
+websocket.send(message);

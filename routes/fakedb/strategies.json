@@ -1,0 +1,47 @@
+[
+    {
+      "key": 1,
+      "name": "Custom Strategy1",
+      "lastTest": "Test 1",
+      "lastTestTime": "5/26/2023 11:58:AM",
+      "totalTests": 1,
+      "comments": "",
+      "symbolsForPerformanceChart": "SPX Xo"
+    },
+    {
+      "key": 2,
+      "name": "Custom Strategy2",
+      "lastTest": "Test 1",
+      "lastTestTime": "5/26/2023 11:58:AM",
+      "totalTests": 1,
+      "comments": "",
+      "symbolsForPerformanceChart": "SPX Xo"
+    },
+    {
+      "key": 3,
+      "name": "Custom Strategy3",
+      "lastTest": "Test 1",
+      "lastTestTime": "5/26/2023 11:58:AM",
+      "totalTests": 1,
+      "comments": "",
+      "symbolsForPerformanceChart": "SPX Xo"
+    },
+    {
+      "key": 4,
+      "name": "Custom Strategy4",
+      "lastTest": "Test 1",
+      "lastTestTime": "5/26/2023 11:58:AM",
+      "totalTests": 1,
+      "comments": "",
+      "symbolsForPerformanceChart": "SPX Xo"
+    },
+    {
+      "key": 5,
+      "name": "Custom Strategy5",
+      "lastTest": "Test 1",
+      "lastTestTime": "5/26/2023 11:58:AM",
+      "totalTests": 1,
+      "comments": "",
+      "symbolsForPerformanceChart": "SPX Xo"
+    }
+]
